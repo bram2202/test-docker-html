@@ -25,7 +25,7 @@ jobs:
         
     # build docker img
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test-docker-html
+      run: docker build . --file Dockerfile --tag  bram2202/test-docker-html
       
     # push to docker hub
     - name: docker push
