@@ -29,4 +29,4 @@ jobs:
       
     # push to docker hub
     - name: docker push
-      run: docker push test-docker-html
+      run: docker push bram2202/test-docker-html
