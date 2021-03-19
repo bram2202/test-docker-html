@@ -24,11 +24,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
-        
-    # build docker img
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag  bram2202/test-docker-html
-    
+      
+    # build for multiple platforms and push
     - name: Docker buildX
       run: |
            docker buildx build \
@@ -36,8 +33,4 @@ jobs:
             --platform=linux/amd64,linux/386,linux/arm64,linux/arm/v8,linux/arm/v7,linux/arm/v6,linux/s390x \
             -t bram2202/test-docker-html \
             --push \
-            .
-      
-    # push to docker hub
-    - name: docker push
-      run: docker push bram2202/test-docker-html
+            .      
