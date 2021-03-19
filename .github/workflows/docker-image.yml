@@ -15,6 +15,8 @@ jobs:
     
     # check out code
     - uses: actions/checkout@v2
+    - name: Buildx setup
+      uses: crazy-max/ghaction-docker-buildx@v1
     
     # log into docker hub
     - name: Login to Docker Hub
